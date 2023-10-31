@@ -1,0 +1,48 @@
+body {
+    background-color: #FFFee7;
+}
+
+nav {
+    margin-top: -16px;
+    margin-left: -8px;
+    padding-right: 10px;
+    width: 100%;
+    padding-left: 8px;
+    background-color: #333333;
+    height: 55px;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+.link a:hover {
+    color: #767676;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+h1 {
+    color: #333333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    color: #333333;
+}
+
+button {
+    background-color: blue;
+}
