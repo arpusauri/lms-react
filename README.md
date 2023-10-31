@@ -14,9 +14,9 @@ SumeruLib is a comprehensive library management system designed to efficiently m
 
 To use SumeruLib, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/arpusauri/SumeruLib.git`
-2. Install the required dependencies: `npm install`
-3. Start the application: `npm start`
+1. Clone the repository:
+2. Install the required dependencies:
+3. Start the application:
 
 ## Usage
 
