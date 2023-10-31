@@ -34,6 +34,7 @@ For any questions or inquiries, please reach out to us at [aryapurnama877@gmail.
 - Express (for building RESTful APIs with Node.js)
 - React (for building user interfaces)
 - Node (for server environment)
+- Bootstrap (for styling)
   
 ## Acknowledgements
 
