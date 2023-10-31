@@ -28,6 +28,13 @@ To use SumeruLib, follow these steps:
 
 For any questions or inquiries, please reach out to us at [aryapurnama877@gmail.com](mailto:aryapurnama877@gmail.com).
 
+## Technologies
+
+- MySQL (to store data)
+- Express (for building RESTful APIs with Node.js)
+- React (for building user interfaces)
+- Node (for server environment)
+  
 ## Acknowledgements
 
 We would like to thank the following contributors for their valuable input and support in developing SumeruLib.
