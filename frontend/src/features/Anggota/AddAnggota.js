@@ -1,43 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
 import axios from "axios";
-import Nav from "../components/Nav";
+import { useNavigate } from "react-router-dom";
+import Nav from "../../components/Navbar/Navbar";
 
-function UpdateAnggota() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8001/read/" + id)
-      .then((res) => {
-        console.log(res);
-        setValues({
-          ...values,
-          nama_anggota: res.data[0].nama_anggota,
-          username: res.data[0].username,
-          email: res.data[0].email,
-          password: res.data[0].password,
-          no_telp: res.data[0].no_telp,
-          tgl_bergabung: res.data[0].tgl_bergabung,
-        });
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
+function TambahAnggota() {
   const [values, setValues] = useState({
     nama_anggota: "",
     username: "",
     email: "",
     password: "",
     no_telp: "",
-    tgl_bergabung: ""
+    tgl_bergabung: "",
   });
+  const handleDataChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
 
-  const handleUpdate = (event) => {
-    event.preventDefault();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios
-      .put("http://localhost:8001/update/"+id, values)
+      .post("http://localhost:8001/anggota", values)
       .then((res) => {
         console.log(res);
         navigate("/dashboard/anggota");
@@ -49,8 +37,8 @@ function UpdateAnggota() {
       <Nav />
       <div className="d-flex vh-100 bg-white justify-content-center">
         <div className="shadow p-3 mb-5 bg-white rounded w-50 bg-white rounded p-3">
-          <form onSubmit={handleUpdate}>
-            <h2>Update Anggota</h2>
+          <form onSubmit={handleSubmit}>
+            <h2>Add Anggota</h2>
             <div className="mb-2">
               <label htmlFor="">Nama</label>
               <input
@@ -58,10 +46,7 @@ function UpdateAnggota() {
                 placeholder="Enter Name"
                 className="form-control"
                 name="nama_anggota"
-                value={values.nama_anggota}
-                onChange={e =>
-                  setValues({...values, nama_anggota: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
             <div className="mb-2">
@@ -71,10 +56,7 @@ function UpdateAnggota() {
                 placeholder="Enter Username"
                 className="form-control"
                 name="username"
-                value={values.username}
-                onChange={(e) =>
-                  setValues({ ...values, username: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
             <div className="mb-2">
@@ -84,10 +66,7 @@ function UpdateAnggota() {
                 placeholder="Enter Email"
                 className="form-control"
                 name="email"
-                value={values.email}
-                onChange={(e) =>
-                  setValues({ ...values, email: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
             <div className="mb-2">
@@ -97,10 +76,7 @@ function UpdateAnggota() {
                 placeholder="Enter Password"
                 className="form-control"
                 name="password"
-                value={values.password}
-                onChange={(e) =>
-                  setValues({ ...values, password: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
             <div className="mb-2">
@@ -110,10 +86,7 @@ function UpdateAnggota() {
                 placeholder="Enter Telepon"
                 className="form-control"
                 name="no_telp"
-                value={values.no_telp}
-                onChange={(e) =>
-                  setValues({ ...values, no_telp: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
             <div className="mb-2">
@@ -123,13 +96,10 @@ function UpdateAnggota() {
                 placeholder="Enter Tanggal"
                 className="form-control"
                 name="tgl_bergabung"
-                value={values.tgl_bergabung}
-                onChange={(e) =>
-                  setValues({ ...values, tgl_bergabung: e.target.value })
-                }
+                onChange={handleDataChange}
               />
             </div>
-            <button className="btn btn-success">Update</button>
+            <button className="btn btn-success">Submit</button>
           </form>
         </div>
       </div>
@@ -137,4 +107,4 @@ function UpdateAnggota() {
   );
 }
 
-export default UpdateAnggota;
+export default TambahAnggota;

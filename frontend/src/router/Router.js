@@ -1,22 +1,28 @@
+// Import Router
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
-import Home from "../pages/Home";
-import Dashboard from "../pages/Dashboard";
-import Admin from "../pages/Admin";
-import Anggota from "../pages/Anggota";
-import TambahAnggota from "../pages/TambahAnggota";
-import UpdateAnggota from "../pages/UpdateAnggota";
-import Buku from "../pages/Buku";
-import Peminjaman from "../pages/Peminjaman";
+
+// Layout
+import DashboardLayout from "../layout/Dashboard/DashboardLayout";
+
+// Admin
+import Dashboard from "../pages/Admin/Dashboard/Dashboard";
+import Admin from "../pages/Admin/Pegawai/Pegawai";
+import Anggota from "../pages/Admin/Anggota/Anggota";
+import Buku from "../pages/Admin/Buku/Buku";
+import Peminjaman from "../pages/Admin/Peminjaman/Peminjaman";
+
+// CRUD Routing
+import TambahAnggota from "../features/Anggota/AddAnggota";
+import UpdateAnggota from "../features/Anggota/UpdateAnggota";
+
+// Index Router
 import Login from "../pages/Login";
+import Home from "../pages";
 import Signup from "../pages/Signup";
 import NoPage from "../pages/NoPage";
 
-
-
-
-
 const router = createBrowserRouter([
+  // Index Routing
   {
     path: "/",
     element: <Home />,
@@ -33,8 +39,9 @@ const router = createBrowserRouter([
     path: "/signup",
     element: <Signup />,
   },
+  // Dashboard Routing
   {
-    element: <App />,
+    element: <DashboardLayout />,
     children: [
       {
         path: "/signup",

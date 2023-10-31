@@ -1,6 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav";
-import { Link } from "react-router-dom";
+import Nav from "../../../components/Navbar/Navbar";
 
 const Buku = () => {
   return (
@@ -136,55 +135,55 @@ const Buku = () => {
             </div>
           </div>
         </div>
-          <h4 className="mt-4">Book List</h4>
-          <table class="table table-striped">
-            <thead className="border">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">ID Penulis</th>
-                <th scope="col">ID Penerbit</th>
-                <th scope="col">ID Kategori</th>
-                <th scope="col">ISBN</th>
-                <th scope="col">Judul Buku</th>
-                <th scope="col">Tahun Terbit</th>
-                <th scope="col">Judul Buku</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>111</td>
-                <td>Makan - makan</td>
-                <td>18/10/2014</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>2</td>
-                <td>2</td>
-                <td>2</td>
-                <td>222</td>
-                <td>Surabi haneut</td>
-                <td>17/10/2016</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>333</td>
-                <td>Java coffee</td>
-                <td>16/10/2021</td>
-                <td>5</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h4 className="mt-4">Book List</h4>
+        <table class="table table-striped">
+          <thead className="border">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">ID Penulis</th>
+              <th scope="col">ID Penerbit</th>
+              <th scope="col">ID Kategori</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">Judul Buku</th>
+              <th scope="col">Tahun Terbit</th>
+              <th scope="col">Judul Buku</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>111</td>
+              <td>Makan - makan</td>
+              <td>18/10/2014</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>2</td>
+              <td>2</td>
+              <td>2</td>
+              <td>222</td>
+              <td>Surabi haneut</td>
+              <td>17/10/2016</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>3</td>
+              <td>3</td>
+              <td>3</td>
+              <td>333</td>
+              <td>Java coffee</td>
+              <td>16/10/2021</td>
+              <td>5</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
   );
 };
 

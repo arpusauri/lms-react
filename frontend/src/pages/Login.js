@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Validation from "../utils/LoginValidation";
+import Validation from "../utils/FormValidation";
 import axios from "axios";
 
 function Login() {

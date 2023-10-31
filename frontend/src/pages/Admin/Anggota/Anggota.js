@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Nav from "../components/Nav";
+import Nav from "../../../components/Navbar/Navbar";
 
 function Anggota() {
   const [data, setData] = useState([]);
@@ -13,21 +13,25 @@ function Anggota() {
   }, []);
 
   const handleDelete = (id) => {
-    alert("Apakah anda yakin ingin menghapusnya?");
-    axios.delete("http://localhost:8001/delete/" + id)
-      .then(res => {
+    axios
+      .delete("http://localhost:8001/delete/" + id)
+      .then((res) => {
         window.location.reload();
       })
-    .catch(err => console.log(err))
-}
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="row">
       <Nav />
       <div className="container-fluid">
-          <Link to="/create/anggota" type="button" className="shadow btn btn-dark mt-4 rounded">
-            Tambah Anggota
-          </Link>
+        <Link
+          to="/create/anggota"
+          type="button"
+          className="shadow btn btn-dark mt-4 rounded"
+        >
+          Tambah Anggota
+        </Link>
         <h4 className="mt-4">Member List</h4>
         <table className="shadow table table-striped">
           <thead className="border">
@@ -58,7 +62,10 @@ function Anggota() {
                     >
                       Edit
                     </Link>
-                    <button onClick={() => handleDelete(anggota.id_anggota)} className="btn btn-sm btn-danger mx-2">
+                    <button
+                      onClick={() => handleDelete(anggota.id_anggota)}
+                      className="btn btn-sm btn-danger mx-2"
+                    >
                       Delete
                     </button>
                   </td>
